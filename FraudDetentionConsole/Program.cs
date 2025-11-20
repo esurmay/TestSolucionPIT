@@ -13,10 +13,9 @@ string filePath = Path.Combine(AppContext.BaseDirectory, "orders.txt");
 
 fraudDetentionCoreService.processFile(filePath);
 
-var list = fraudDetentionCoreService.GetPossibleFraudOrders();
+var OrderedList = fraudDetentionCoreService.GetPossibleFraudOrders().OrderBy(o => o.DealId).ToList();
 
-var OrderedList = list.OrderBy(o => o.DealId).ToList();
-Console.WriteLine("Posibles Ordenes Fraudulentas:");
+ Console.WriteLine("Posibles Ordenes Fraudulentas:");
 int count = 1;
 foreach (var item in OrderedList)
 {
