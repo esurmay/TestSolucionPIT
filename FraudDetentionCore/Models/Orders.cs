@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FraudDetentionCore.Models
 {
-    public class Orders
+    public class Order
     {
         public int OrderId { get; set; }
         public int DealId { get; set; }
@@ -15,6 +15,6 @@ namespace FraudDetentionCore.Models
         public string City { get; set; } = string.Empty;
         public string State { get; set; } = string.Empty;
         public int ZipCode { get; set; }
-        public int CreditCardNumber { get; set; }
+        public long CreditCardNumber { get; set; }
     }
 }

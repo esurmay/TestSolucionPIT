@@ -9,6 +9,10 @@ namespace FraudDetentionCore.Interfaces
 {
     public interface IFraudDetentionCore
     {
-        bool IsFraudulent(List<Orders> Orders);
+        void processFile(string filePath);
+
+        List<Order> GetPossibleFraudOrders();
+
+        bool IsFraudulent(List<Order> Orders);
     }
 }
